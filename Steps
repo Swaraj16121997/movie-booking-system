@@ -1,0 +1,9 @@
+Primary objective to achieve in this project: Concurrency Handling
+Hence, primary requirement to achieve in this project: User should be able to book the ticket and if more than one user
+is trying to book the same seat for a show then only one user should be allowed to book
+
+Project Building steps:
+  - create model classes, enums, interfaces, etc. in the `model` package
+  - use @Getter, @Setter, @Enumerated(EnumType.ORDINAL) (String/Int), @ElementCollection (list of enum), etc annotations
+  - Do the cardinality Mapping for all the non-primitive attributes via annotations
+  - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)

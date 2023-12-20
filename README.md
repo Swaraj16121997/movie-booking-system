@@ -1,1 +1,1 @@
-# book-my-show
+# movie-booking-system

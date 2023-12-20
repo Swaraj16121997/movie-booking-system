@@ -2,8 +2,14 @@ Primary objective to achieve in this project: Concurrency Handling
 Hence, primary requirement to achieve in this project: User should be able to book the ticket and if more than one user
 is trying to book the same seat for a show then only one user should be allowed to book
 
+Solutions:
+  - Way 1: Serializable Isolation Level (Transaction Isolation Level) -> acquiring lock from start till the end of the payment or till the timer finishes (in case user returns back from payment page)
+  - Way 2: Double check locking. Threads check if seat is available then one of the threads takes lock over critical section in the race condition, then again that thread checks if the status changed
+           or not (status might get changed due to some internal reason in the backend). If status has not changed, now thread will perform some actions and change the status to "Blocked" in the db
+           itself and then release the lock here itself, as it has changed the primary check condition in this step itself in the db. Hence, this approach is faster than way 1.
+
 Project Building steps:
   - create model classes, enums, interfaces, etc. in the `model` package
   - use @Getter, @Setter, @Enumerated(EnumType.ORDINAL) (String/Int), @ElementCollection (list of enum), etc annotations
-  - Do the cardinality Mapping for all the non-primitive attributes via annotations
+  - Do the cardinality Mapping for all the non-primitive attributes via annotations. Cardinality is not applicable for enums.
   - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)

@@ -10,6 +10,18 @@ Solutions:
 
 Project Building steps:
   - create model classes, enums, interfaces, etc. in the `model` package
-  - use @Getter, @Setter, @Enumerated(EnumType.ORDINAL) (String/Int), @ElementCollection (list of enum), etc annotations
   - Do the cardinality Mapping for all the non-primitive attributes via annotations. Cardinality is not applicable for enums.
   - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)
+
+About some basic springboot annotations:
+  - @Getter, @Setter, @ToString, @EqualsAndHashCode, @NoArgsConstructor, @AllArgsConstructor, @Data, @RequiredArgsConstructor
+  - @Enumerated(EnumType.ORDINAL) (String/Int), @ElementCollection (list of enum) - These annotations are used to map enum in the db
+  - @Entity - is used to tell JPA to create the class as a table in the database.
+  - @Id - is used to define the primary key.
+  - @GeneratedValue(strategy = GenerationType.IDENTITY) - is used to define the primary key generation strategy.
+  - @ManyToOne - is used to define the many-to-one relationship between two entities.
+  - @Repository, @Service, @Controller are specializations of @Component for more specific use cases. These annotations are used
+    to auto-detect and auto-configure beans using classpath scanning in spring framework.
+  - @Transactional(isolation = Isolation.SERIALIZABLE) - This annotation is used to mark a method as transactional. The annotation can be placed before method name or before class name.
+  - @SpringBootApplication is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+  - @Autowired - It is basically used to inject the dependency of a bean in a class without having to create its object (using new keyword) in that class. The beans can be wired via constructor or properties or setter method.

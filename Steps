@@ -25,3 +25,7 @@ About some basic springboot annotations:
   - @Transactional(isolation = Isolation.SERIALIZABLE) - This annotation is used to mark a method as transactional. The annotation can be placed before method name or before class name.
   - @SpringBootApplication is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan.
   - @Autowired - It is basically used to inject the dependency of a bean in a class without having to create its object (using new keyword) in that class. The beans can be wired via constructor or properties or setter method.
+  - @EnableJpaAuditing - This annotation is used to enable JPA Auditing. Used in springboot application class.
+  - @EntityListeners(AuditingEntityListener.class) - This annotation is used to specify the listener class for auditing. Used generally in base model class.
+  - @CreatedDate - This annotation is used to mark the field as the date on which the entity was created. Used generally in base model class.
+  - @LastModifiedDate - This annotation is used to mark the field as the date on which the entity was last modified. Used generally in base model class.

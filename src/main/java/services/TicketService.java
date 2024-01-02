@@ -5,6 +5,7 @@ import exceptions.ShowSeatNotAvailableException;
 import exceptions.UserNotFoundException;
 import models.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.ShowRepository;
@@ -18,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TicketService {
     private UserRepository userRepository;
     private ShowRepository showRepository;

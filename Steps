@@ -8,10 +8,6 @@ Solutions:
            or not (status might get changed due to some internal reason in the backend). If status has not changed, now thread will perform some actions and change the status to "Blocked" in the db
            itself and then release the lock here itself, as it has changed the primary check condition in this step itself in the db. Hence, this approach is faster than way 1.
 
-Project Building steps:
-  - create model classes, enums, interfaces, etc. in the `model` package
-  - Do the cardinality Mapping for all the non-primitive attributes via annotations. Cardinality is not applicable for enums.
-  - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)
 
 About some basic springboot annotations:
   - @Getter, @Setter, @ToString, @EqualsAndHashCode, @NoArgsConstructor, @AllArgsConstructor, @Data, @RequiredArgsConstructor
@@ -29,3 +25,9 @@ About some basic springboot annotations:
   - @EntityListeners(AuditingEntityListener.class) - This annotation is used to specify the listener class for auditing. Used generally in base model class.
   - @CreatedDate - This annotation is used to mark the field as the date on which the entity was created. Used generally in base model class.
   - @LastModifiedDate - This annotation is used to mark the field as the date on which the entity was last modified. Used generally in base model class.
+
+Project Building steps:
+  - create model classes, enums, interfaces, etc. in the `model` package
+  - Do the cardinality Mapping for all the non-primitive attributes via annotations. Cardinality is not applicable for enums.
+  - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)
+  - start completing the primary requirement by working on the ticket service

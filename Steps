@@ -31,3 +31,4 @@ Project Building steps:
   - Do the cardinality Mapping for all the non-primitive attributes via annotations. Cardinality is not applicable for enums.
   - create database from mysql workbench and do the db connection setup in the project (db connection, properties file, etc.)
   - start completing the primary requirement by working on the ticket service
+  - also implement the user service for sign-up and login functionality using BCryptPasswordEncoder
